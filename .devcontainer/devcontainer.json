@@ -12,5 +12,6 @@
   "forwardPorts": [60005],
   "portsAttributes": {
     "60005": { "label": "SN13 Miner Axon (testnet)", "onAutoForward": "notify" }
-  }
+  },
+  "postStartCommand": "gh codespace ports visibility 60005:public -c $CODESPACE_NAME 2>/dev/null || true; pm2 resurrect || echo 'No PM2 processes to restore'"
 }
