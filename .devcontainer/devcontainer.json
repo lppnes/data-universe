@@ -1,0 +1,16 @@
+{
+  "name": "SN13 Testnet Miner",
+  "image": "mcr.microsoft.com/devcontainers/python:3.11",
+  "features": {
+    "ghcr.io/devcontainers/features/node:1": { "version": "20" },
+    "ghcr.io/devcontainers/features/sshd:1": { "version": "latest" }
+  },
+  "postCreateCommand": "bash .devcontainer/setup.sh",
+  "customizations": {
+    "vscode": { "extensions": ["ms-python.python"] }
+  },
+  "forwardPorts": [60005],
+  "portsAttributes": {
+    "60005": { "label": "SN13 Miner Axon (testnet)", "onAutoForward": "notify" }
+  }
+}
